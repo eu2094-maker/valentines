@@ -57,7 +57,7 @@ function draw() {
 
   if (love > 70) {
     fill(255, 100, 150, 20);
-    rect(0, 0, 800, 1920);
+    rect(0, 0, windowWidth, windowHeight);
   }
 }
 function drawStartScreen() {
@@ -232,31 +232,25 @@ function drawChoiceButton(cx, cy, label) {
 function mousePressed() {
   if (gameState === "playing") {
     // Compliment
-    if (inButton(550)) {
+    if (inButton(620)) {
       love += 10;
     }
-
-    // Flowers
-    else if (inButton(620)) {
+    else if (inButton(700)) {
       love += 5;
     }
-
-    // Freaky
-    else if (inButton(690)) {
+    else if (inButton(780)) {
       love += 15;
     }
-
-    // Do nothing
-    else if (inButton(760)) {
+    else if (inButton(860)) {
       love -= 10;
     }
+  }
 
-    love = constrain(love, 0, maxLove);
-    spawnEmojis(mouseX, mouseY);
+  love = constrain(love, 0, maxLove);
+  spawnEmojis(mouseX, mouseY);
 
-    if (love >= maxLove) {
-      gameState = "ending";
-    }
+  if (love >= maxLove) {
+    gameState = "ending";
   } else if (gameState === "ending") {
     // Playlist button
     if (
