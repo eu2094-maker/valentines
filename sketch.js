@@ -16,12 +16,16 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(390, 844);
+  createCanvas(windowWidth, windowHeight);
   textAlign(CENTER, CENTER);
   imageMode(CENTER);
   introStartTime = millis();
   pixelDensity(1);
   noSmooth();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
