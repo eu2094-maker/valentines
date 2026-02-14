@@ -206,22 +206,26 @@ function drawIdleSparkles() {
 }
 
 function drawChoices() {
-  drawChoiceButton(width / 2, 550, "Compliment her 🥴");
-  drawChoiceButton(width / 2, 620, "Give her flowers 💐");
-  drawChoiceButton(width / 2, 690, "Get freaky 😈");
-  drawChoiceButton(width / 2, 760, "Do nothing...");
+  drawChoiceButton(width / 2, 620, "Compliment her 🥴");
+  drawChoiceButton(width / 2, 700, "Give her flowers 💐");
+  drawChoiceButton(width / 2, 780, "Get freaky 😈");
+  drawChoiceButton(width / 2, 860, "Do nothing...");
 }
 
 function drawChoiceButton(cx, cy, label) {
+  let buttonWidth = 280;
+  let buttonHeight = 45;
+
   rectMode(CORNER);
   fill(255, 245, 250);
   stroke(200, 150, 200);
   strokeWeight(2);
-  rect(cx - 140, cy - 22, 280, 45, 30);
+  rect(cx - buttonWidth / 2, cy - buttonHeight / 2, buttonWidth, buttonHeight, 30);
 
   noStroke();
   fill(60);
   textSize(16);
+  textAlign(CENTER, CENTER);
   text(label, cx, cy);
 }
 
